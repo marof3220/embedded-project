@@ -4,12 +4,6 @@
  *  Created on: Mar 9, 2020
  *      Author: marof
  */
-/*
- * main.c
- *
- *  Created on: Feb 23, 2020
- *      Author: marof
- */
 
 
 #include <avr/io.h>
