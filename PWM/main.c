@@ -1,11 +1,9 @@
 /*
-* PWM_test.c
-*
-* Created on: Aug 17, 2013
-* Author: rezwan
-*/
-//#define F_CPU 20000000UL
-//#include <avr/io2313.h>
+ * main.c
+ *
+ *  Created on: Dec 23, 2019
+ *      Author: marof
+ */
 #include<avr/io.h>
 #include<util/delay.h>
 #define F_CPU 16000000UL
@@ -51,7 +49,7 @@ int i=5;
 int j=5;
 
 //Setup 10bit Fast PWM Mode 7
-// WGM13=0, WGM12=1, WGM11=1, WGM10= 1 is for fastPWM in 10bit mode.
+// WGM13=0, WGM12=1, WGM11=0, WGM10= 1 is for fastPWM in 8bit mode.
 // Here TOP= 0x03FF or 1023
 // For more information 2313 datasheet table 46 pg 106
 OCR1B = 0;
@@ -75,18 +73,6 @@ for (i = 0; i<255; i++)
 OCR1B=sine_wave[i];
 _delay_ms(10);
 }
-
-for (j = 0; j<1023; j+=5)
-			  {
-				  OCR1A=j;
-				  _delay_ms(10);
-			  }
-
-			  for (j = 1023; j>=0; j-=5)
-			  {
-				  OCR1A=j;
-				  _delay_ms(10);
-			  }
 
 
 }
